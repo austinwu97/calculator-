@@ -270,80 +270,80 @@ function parser(expression){
 function calculateResult(expression) {
   // multiplication
   var scan1 = [];
-  var counter = 0;
-  while (counter < (expression.length)){
+  var counter_a = 0;
+  while (counter_a < (expression.length)){
 
-    if (expression[counter] === "*"){
-      var first_num = scan1[scan1.length - 1]
-      var second_num = expression[counter+1];
-      var result = parseInt(first_num * second_num);
+    if (expression[counter_a] === "*"){
+      var first_num_a = scan1[scan1.length - 1]
+      var second_num_a = expression[counter_a+1];
+      var result_a = parseInt(first_num_a * second_num_a);
       scan1.pop(); // remove last element
-      scan1.push(result);
-      counter += 1;
+      scan1.push(result_a);
+      counter_a += 1;
 
     }
     else{
-      scan1.push(expression[counter]);
+      scan1.push(expression[counter_a]);
 
     }
-    counter += 1;
+    counter_a += 1;
   }
 
   // division
   var scan2 = [];
-  var counter = 0;
-  while (counter < (scan1.length)){
+  var counter_b = 0;
+  while (counter_b < (scan1.length)){
 
-    if (scan1[counter] === "%"){
-      var first_num = scan2[scan2.length - 1]
-      var second_num = scan1[counter+1];
-      if (second_num === 0){ // catch zero division error 
+    if (scan1[counter_b] === "%"){
+      var first_num_b = scan2[scan2.length - 1]
+      var second_num_b = scan1[counter_b+1];
+      if (second_num_b === 0){ // catch zero division error 
         return "ERROR"; 
         
       }
-      var result = parseInt(first_num / second_num);
+      var result_b = parseInt(first_num_b / second_num_b);
       scan2.pop(); // remove last element
-      scan2.push(result);
-      counter += 1;
+      scan2.push(result_b);
+      counter_b += 1;
 
     }
     else{
-      scan2.push(scan1[counter]);
+      scan2.push(scan1[counter_b]);
 
     }
-    counter += 1;
+    counter_b += 1;
   }
 
   // Addition and Subtraction
   var scan3 = [];
-  var counter = 0;
-  while (counter < (scan2.length)){
+  var counter_c = 0;
+  while (counter_c < (scan2.length)){
 
-    if (scan2[counter] === "+"){
-      var first_num = scan3[scan3.length - 1]
-      var second_num = scan2[counter+1];
-      var result = parseInt(first_num + second_num);
+    if (scan2[counter_c] === "+"){
+      var first_num_c = scan3[scan3.length - 1]
+      var second_num_c = scan2[counter_c+1];
+      var result_c = parseInt(first_num_c + second_num_c);
       scan3.pop(); // remove last element
-      scan3.push(result);
-      counter += 1;
+      scan3.push(result_c);
+      counter_c += 1;
 
     }
 
-    else if (scan2[counter] === "-"){
-      var first_num = scan3[scan3.length - 1]
-      var second_num = scan2[counter+1];
-      var result = parseInt(first_num - second_num);
+    else if (scan2[counter_c] === "-"){
+      var first_num_d = scan3[scan3.length - 1]
+      var second_num_d = scan2[counter_c+1];
+      var result_d = parseInt(first_num_d - second_num_d);
       scan3.pop(); // remove last element
-      scan3.push(result);
-      counter += 1;
+      scan3.push(result_d);
+      counter_c += 1;
 
     }
 
     else{
-      scan3.push(scan2[counter]);
+      scan3.push(scan2[counter_c]);
 
     }
-    counter += 1;
+    counter_c += 1;
   }
 
   return scan3;
