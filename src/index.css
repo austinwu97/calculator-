@@ -17,10 +17,10 @@ body {
   width: 395px;
   height: 100px;
   line-height: 130px;
-  background-color: #df9421 ;
+  background-color: #34495E;
   font-size: 45px;
   font-weight: 400;
-  color: black;
+  color: white;
   border: 3px solid rgba(0, 0, 0, 0.8);
   flex-shrink: 3
 
