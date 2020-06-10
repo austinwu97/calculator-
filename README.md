@@ -6,6 +6,10 @@ This calculator was created in React
 
 Note: The app should pop up in your browser. If not, open http://localhost:3000 in your browser
 
+## You should see this
+![Screenshot](images/calc.png)
+
+
 
 
 
